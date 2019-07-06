@@ -1,0 +1,61 @@
+#header-banner{
+	min-height: 30em;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+#header-banner-inner{
+	height: 30em;
+	width: 100%;
+	background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/home-header.jpg");
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	animation: growBg 1.5s;
+	padding-top: 8em;
+}
+#header-banner-text{
+	position: absolute;
+	width: 100%;
+	padding: 0 1.5em;
+	left: 0;
+	top: 0;
+	margin-top: 12em;
+	z-index: 1;
+}
+nav{
+	z-index: 2;
+}
+footer{
+	bottom: 0;
+	padding: 2.5em 0;
+	background-color: #111;
+}
+#description{
+	width: 100%;
+}
+.ql-editor{
+	min-height: 10em;
+}
+.pagination{
+	justify-content: center;
+}
+@keyframes growBg{
+	from{
+		transform: scale(2.0);
+	}
+	to{
+		transform: scale(1.0);
+	}
+}
+@media screen(max-width: 500px){
+	#header-banner-text{
+		position: absolute;
+		width: 100%;
+		padding: 0 1.5em;
+		left: 0;
+		top: 0;
+		margin-top: 5em;
+	}
+}

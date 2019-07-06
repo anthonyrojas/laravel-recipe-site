@@ -1,0 +1,20 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+$enable-shadows: true;
+$enable-transitions: true;
+$enable-gradients: true;
+$blue: #4285F4;
+$red: #ff4444;
+$cyan: #33b5e5;
+$green: #00C851;
+$yellow: #ffbb33;
+$teal: #18E7AA;
+$theme-colors:(
+	secondary: #8f94fb
+);
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
