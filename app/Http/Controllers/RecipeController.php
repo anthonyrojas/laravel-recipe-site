@@ -54,7 +54,9 @@ class RecipeController extends Controller
 		if(empty($limit) || $limit == null){
 			$limit = 5;
 		}
-		$recipes = Recipe::with('user')->where('user_id', Auth::user()->id)->orderBy($sortBy)->paginate($limit);
+		$recipes = Recipe::with('user')->with(['favorites' => function($q){
+			$q->select(['id', 'confirmed', 'user_id', 'recipe_id'])->where('favorites.user_id', '=', Auth::user()->id)->where('confirmed', '=', 1);
+		}])->withCount('favorites')->withCount('comments')->where('user_id', Auth::user()->id)->orderBy($sortBy)->paginate($limit);
 		return view('recipes')->with('recipes', $recipes)->with('sorter', $sorter)->with('limit', $limit)->with('account_recipe', true);
 	}
 	public function get_recipe(Request $req, $id)

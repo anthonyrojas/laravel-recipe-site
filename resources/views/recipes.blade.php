@@ -42,7 +42,7 @@
 				<div class="card my-3 shadow-sm">
 					<div class="row no-gutters">
 						<div class="col-md-3 bg-secondary">
-							<img src="{{$recipe->img || '/storage/recipes/temp/default.png'}}" class="card-img" onerror='this.src="/storage/recipes/temp/default.png"' alt="{{$recipe->title}}">
+							<img id="recipe-{{$recipe->recipeId}}-img" src="{{$recipe->img}}" class="card-img" onerror="this.src = '/storage/recipes/temp/default.png'; " alt="{{$recipe->title}}">
 						</div>
 						<div class="col-md-9">
 							<div class="card-body">

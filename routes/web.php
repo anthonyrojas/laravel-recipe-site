@@ -16,9 +16,16 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/recipes', 'RecipeController@get_recipes');
-Route::get('/account/recipes', 'RecipeController@get_my_recipes');
+/* ACCOUNT WEB ROUTES */
 Route::get('/account', 'HomeController@index')->name('account');
+Route::get('/account/edit', 'HomeController@edit_account');
+Route::get('/account/recipes', 'RecipeController@get_my_recipes');
+Route::put('/account/update', 'HomeController@update_account');
+Route::get('/account/password', 'HomeController@edit_password');
+Route::put('/account/password', 'HomeController@update_password');
+
+/* RECIPE WEB ROUTES */
+Route::get('/recipes', 'RecipeController@get_recipes');
 Route::get('/recipe/create', 'RecipeController@create_recipe');
 Route::post('/recipe/create', 'RecipeController@create');
 Route::post('/recipe/{id}/update', 'RecipeController@update');
